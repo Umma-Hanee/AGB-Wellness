@@ -1,0 +1,57 @@
+<html>
+<head>
+{{>header}}
+</head>
+<body>
+<div class="text-right" style="margin-bottom: 1em;">
+{{^user}}
+<a id="login" href="/signup" class="btn btn-primary">
+Sign up
+</a>
+<a id="login" href="/login" class="btn btn-primary">
+Sign in
+</a>
+{{/user}}
+{{#user}}
+<a id="logout" href="/logout" class="btn btn-primary">
+Sign out
+</a>
+{{/user}}
+</div>
+<h1>{{title}}</h1>
+{{#entries}}
+<div>
+<h3>Category:
+{{category}}</h3>
+<p>Goal Name:
+{{goalname}}
+</p>
+<p>Date:
+{{day}}
+</p>
+<p>Time:
+{{time}}
+</p>
+<p>Repeat:
+{{repeat}}
+</p>
+<p>Short Description:
+{{shortDescription}}<p>
+</div>
+{{/entries}}
+{{^entries}}
+No entries yet.
+{{/entries}}
+<div>
+ <a href="/new" class="btn btn-primary">
+Add Goals
+ </a>
+ <a href="/delete" class="btn btn-primary">
+Delete Goals
+ </a>
+ <a href="/update" class="btn btn-primary">
+Update Goals
+ </a>
+ </div>
+</body>
+</html>
