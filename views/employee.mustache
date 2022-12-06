@@ -1,0 +1,103 @@
+<html>
+<head>
+{{>header}}
+</head>
+<body class="bg-violet-400 font-serif">
+<div class="relative min-h-screen md:flex">
+
+  <!-- mobile menu bar -->
+  <div class="bg-gray-800 text-gray-100 flex justify-between md:hidden">
+    <!-- logo -->
+    <a href="#" class="block p-4 text-white font-bold">Better Dev</a>
+
+    <!-- mobile menu button -->
+    <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
+      <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- sidebar -->
+  <div class="sidebar bg-purple-400 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+
+    <!-- logo -->
+     <a href="#" class="text-white flex items-center space-x-2 px-4">
+      <img class="h-40" src="./img/AGB_Wellness__4.png" alt="AGB Wellness Logo" />
+    </a>
+
+
+    <!-- nav -->
+    <nav>
+      <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        Home
+      </a>
+      <a href="/view" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        View Goals
+      </a>
+      <a href="/new" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        Add Goals
+      </a>
+      <a href="/update" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        Update Goals
+      </a>
+      <a href="/delete" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        Delete Goals
+      </a>
+      <a href="/logout" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-400 hover:text-white">
+        Log Out
+      </a>
+    </nav>
+  </div>
+
+  <!-- content -->
+  <div class="flex-1 p-10">
+  
+    <div class="my-20">
+            <h1 class="font-serif text-5xl font-bold text-center text-white align-middle"> Wellness Programmes Available
+            </h1>
+     </div>
+
+    <div class="justify-center flex grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+            <img class="object-cover w-full h-48 blur-sm contrast-50" src="./img/nutrition.jpg" alt="Flower and sky" />
+
+            <div class="absolute top-0 left-0 px-6 py-4">
+                <h4 class="mb-3 text-l font-semibold tracking-tight text-white">Nutrition</h4>
+                <p class="leading-normal text-gray-100 whitespace-normal">Setting dietary goals is important because your diets shapes your health and wellbeing more than any other modifiable lifestyle factor in your life</p>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+            <img class="object-cover w-full h-48 blur-sm contrast-50" src="./img/mental.jpg" alt="Flower and sky" />
+
+            <div class="absolute top-0 left-0 px-6 py-4">
+                <h4 class="mb-3 text-l font-semibold tracking-tight text-white">Mental Health</h4>
+                <p class="leading-normal text-gray-100 whitespace-normal">Goals also help align your focus and promote a sense of self-mastery.</p>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+            <img class="object-cover w-full h-48 blur-sm contrast-50" src="./img/fitness.jpeg" alt="Flower and sky" />
+
+            <div class="absolute top-0 left-0 px-6 py-4">
+                <h4 class="mb-3 text-l font-semibold tracking-tight text-white">Fitness</h4>
+                <p class="leading-normal text-gray-100 whitespace-normal">Fitness goals are an essential part of your wellness journey. By setting goals, you are better able to hold yourself accountable, show yourself what you are capable of.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <div class="flex justify-center">
+         <a class="px-4 py-2 rounded-md bg-purple-400 text-sky-100 hover:bg-violet-400" href="/new">Define Goals</a>
+        </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+</body>
+
+</html>

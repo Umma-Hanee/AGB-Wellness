@@ -1,0 +1,71 @@
+<html>
+<head>
+{{>header}}
+</head>
+<body class="container">
+<form method="post" role="form">
+<section class="h-full gradient-form bg-gray-200 md:h-screen">
+  <div class="container py-12 px-6 h-full">
+    <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+      <div class="xl:w-10/12">
+        <div class="block bg-white shadow-lg rounded-lg">
+          <div class="lg:flex lg:flex-wrap g-0">
+            <div class="lg:w-6/12 px-4 md:px-0">
+              <div class="md:p-12 md:mx-6">
+                <div class="text-center">
+                  <img
+                    class="mx-auto w-48"
+                    src="./img/AGB_Wellness__4.png"
+                    alt="logo"
+                  />
+                  <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Delete Employee </h4>
+                </div>
+                <form method="post" role="form" action="/deleteemployee">
+                  <div class="mb-4">
+                   <div class="form-group">
+              <label for="job"> Job Title:</label>
+                 <textarea class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="job" name="job"
+        placeholder="job" required>
+        </textarea>
+        </div>
+        </div>
+
+                  <div class="mb-4">
+                   <div class="form-group">
+              <label for="employeeName"> Employee Name:</label>
+                 <textarea class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="employeeName" name="employeeName"
+        placeholder="employeeName" required>
+        </textarea>
+        </div>
+                          </div>
+
+        <div class="form-group flex justify-middle px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">
+        <input type="submit" value="Delete Goal" class="btn btn-primary">
+        </div>
+        
+        </div>
+        </form>
+            </div>
+             <div
+              class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none"
+              style="
+                background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+              "
+            >
+              <div class="text-white px-4 py-6 md:p-12 md:mx-6">
+                <h4 class="text-xl font-semibold mb-6">We are more than just a company</h4>
+                <p class="text-sm">
+                Due to the pandemic, digital nomads have become popular. Many professionals can travel to any location and choose their preferred work environment. Even if you work remotely, you must still take care of yourself. Staying healthy - both mentally and physically - is essential for achieving work-life balance. Agb Ltd. Corporation intends to provide a wellness program (fitness, health and nutrition) for their remote employees.
+
+                </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form>
+</body>
+</html>

@@ -10,29 +10,6 @@ class agbwellness {
             this.db = new nedb();
         }
     }
-    init() {
-        this.db.insert({
-            category: 'Nutrition',
-            goalname: 'Detox water ',
-            day: '2020-02-16',
-            time: '10pm',
-            repeat: 'Daily',
-            shortDescription: 'Detox water helps in cleansing the body and should be taking at least once a week'
-        });
-        //for later debugging
-        console.log('db goal nutrition inserted');
-        this.db.insert({
-            category: 'Mental Health',
-            goalname: 'Breathing Excercise ',
-            day: '2020-02-15',
-            time: '6am',
-            repeat: 'Weekly',
-            shortDescription: 'Doing breathing excercises in the morning helps in clearing the mind'
-        });
-        //for later debugging
-        console.log('db goal Mental Health inserted');
-    }
-
     //a function to return all goals from the database
     getAllGoals() {
         //return a Promise object, which can be resolved or rejected
@@ -128,7 +105,93 @@ class agbwellness {
         });
 
     };
+
+
+
+    //a function to return all employees from the database
+    getAllEmployees() {
+        //return a Promise object, which can be resolved or rejected
+        return new Promise((resolve, reject) => {
+            this.db.find({}, function (err, employees) {
+                //if error occurs reject Promise
+                if (err) {
+                    reject(err);
+                    //if no error resolve the promise & return the data
+                } else {
+                    resolve(employees);
+                    //to see what the returned data looks like
+                    console.log('function all() returns: ', employees);
+                }
+            });
+        });
+    }
+
+    
+    //a function to add goal from the database
+    addEmployee(job, employeeName, email, number, address) {
+        var employee = {
+            job: job,
+            employeeName: employeeName,
+            email: email,
+            number: number,
+            address: address
+        }
+        console.log('Employee Added', employee);
+        this.db.insert(employee, function (err, doc) {
+            if (err) {
+                console.log('Error inserting document', job);
+            } else {
+                console.log('document inserted into the database', doc);
+            }
+        })
+
+    }
+
+    //a function to update goal from the database
+    updateEmployee = (employeeName, email, job) => {
+        return new Promise((resolve, reject) => {
+            this.db.update(
+                { employeeName: employeeName, email: email },
+                { $set: { job: job } },
+                { multi: true },
+                (err, numReplaced) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(numReplaced);
+                        console.log(
+                            'document replaced in the database :' ,numReplaced);
+                    }
+                }
+            );
+        });
+
+    };
+
+
+    //a function to delete goal from the database
+    removeEmployee = (job, employeeName) => {
+        return new Promise((resolve, reject) => {
+            this.db.remove(
+                { job: job, employeeName: employeeName },
+                {},
+                (err, numRemoved) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(numRemoved);
+                        console.log("document deleted in the database", numRemoved);
+                    }
+                }
+
+            );
+        });
+
+    };
+
 }
+
+
 
 module.exports = agbwellness;
 
