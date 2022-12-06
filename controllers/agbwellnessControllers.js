@@ -91,7 +91,7 @@ exports.post_update_goal = function (req, res) {
         response.status(400).send("Goals must have a category.");
         return;
     }
-    db.updateGoal(req.body.category,req.body.goalname,req.body.day);
+    db.updateGoal(req.body.category, req.body.goalname, req.body.day);
     res.redirect('/view');
 }
 
