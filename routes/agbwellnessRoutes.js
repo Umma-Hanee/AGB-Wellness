@@ -5,7 +5,7 @@ const {login} = require('../auth/auth')
 const {verify} = require('../auth/auth')
 
 
-router.get('/index', controller.home);
+router.get('/', controller.home);
 router.get('/agbwellness', controller.goals_list);
 router.get('/about', controller.about);
 router.get('/view', controller.view);

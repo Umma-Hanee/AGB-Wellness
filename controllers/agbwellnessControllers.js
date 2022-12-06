@@ -156,7 +156,7 @@ exports.logout = function (req, res) {
     res
         .clearCookie("jwt")
         .status(200)
-        .redirect("/index");
+        .redirect("/");
 }
 
 exports.show_new_entries = function (req, res) {
